@@ -1,0 +1,14 @@
+[ 
+	<% @comments.each_with_index do |comment,i| %>
+		{
+			"comment": {
+				"comment": "<%= comment.comment %>",
+				"created_at": "<%= comment.created_at %>",
+				"story_id": "<%= comment.story_id %>",
+				"user_id": "<%= comment.user_id %>",
+				"user_name": "<%= comment.user.name %>",
+				"id": "<%= comment.id %>"
+			}
+		}<%= ',' if i != (@comments.size - 1)%>
+	<% end %>
+]

@@ -172,6 +172,10 @@ var Story = Backbone.Model.extend({
     return this.collection.project.users.get(this.get('owned_by_id'));
   },
 
+  comments: function() {
+    return this.collection.comments.get(1);
+  },
+
   hasDetails: function() {
     return typeof this.get('description') == "string";
   },

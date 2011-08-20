@@ -852,7 +852,7 @@ form label {
   line-height: 18px;
   float: left;
   width: 130px;
-  text-align: right;
+  text-align: left !important;
   color: #404040;
 }
 form div.input {

@@ -272,8 +272,19 @@ var StoryView = FormView.extend({
 	
 	  div = this.make('div');
 	  currentUser = $('#hiddenUserId').text();
-	  $(div).append('<form method="post" id="new_comment" data-remote="true" class="new_comment" action="/comments" accept-charset="UTF-8"><label for="comment_comment">Comment</label><br><textarea rows="8" name="comment[comment]" id="comment_comment" cols="40"></textarea><br><input type="hidden" value="'+currentUser+'" name="comment[user_id]" id="comment_user_id"><input type="hidden" value="'+this.id+'" name="comment[story_id]" id="comment_story_id"><br/><input type="submit" value="Add comment" name="commit" id="comment_submit" class="btn primary"></form>');
+	  $(div).append('<form method="post" id="new_comment" data-remote="true" class="new_comment" action="/comments" accept-charset="UTF-8"><label for="comment_comment">Comment</label><br><textarea rows="2" name="comment[comment]" id="comment_comment" cols="40"></textarea><br><input type="hidden" value="'+currentUser+'" name="comment[user_id]" id="comment_user_id"><input type="hidden" value="'+this.id+'" name="comment[story_id]" id="comment_story_id"><br/><input type="submit" value="Add comment" name="commit" id="comment_submit" class="btn primary"></form>');
       $(this.el).append(div);
+
+	  div = this.make('table');
+		$(div).attr('class', 'zebra-striped');
+		$(div).append('<thead><th>Comment</th><th>Made By</th></thead>');
+		$.getJSON('/comments/'+this.id+'.json', function(data) {
+			  var items = [];
+			$.each(data, function(k,v){
+					$(div).append('<tr><td>'+v.comment.comment+'</td><td>'+v.comment.user_name+'</td></tr>');
+			});
+		});
+	  $(this.el).append(div);
 
 
 	} else {
@@ -303,9 +314,4 @@ var StoryView = FormView.extend({
   }
 
 
-});
-$('#commentSave').click(function() {
-	alert('test');
-  var commentText = $('textarea#comment').val();
-alert(commentText);
 });

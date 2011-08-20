@@ -13,11 +13,12 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.xml
   def show
-    @comment = Comment.find(params[:id])
+    @comments = Comment.find_all_by_story_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @comment }
+      format.xml  { render :xml => @comments }
+      format.json
     end
   end
 
@@ -78,6 +79,15 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(comments_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  # GET /comments/1/edit
+  def story_comments
+    @comments = Comment.find_by_story_id(params[:id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @comments }
     end
   end
 end
