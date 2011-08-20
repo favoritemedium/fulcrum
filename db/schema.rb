@@ -38,15 +38,15 @@ ActiveRecord::Schema.define(:version => 20110706094137) do
     t.string   "title"
     t.text     "description"
     t.integer  "estimate"
-    t.string   "story_type",      :default => "feature"
-    t.string   "state",           :default => "unstarted"
+    t.string   "story_type",                                     :default => "feature"
+    t.string   "state",                                          :default => "unstarted"
     t.date     "accepted_at"
     t.integer  "requested_by_id"
     t.integer  "owned_by_id"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "position"
+    t.decimal  "position",        :precision => 10, :scale => 0
   end
 
   create_table "users", :force => true do |t|
