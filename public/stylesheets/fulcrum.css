@@ -8,11 +8,22 @@ a img {
 }
 
 #header {
-  background: #6a7176;
+/*  background: #6a7176;
   background: -webkit-gradient(linear, left top, left bottom, from(#6a7176), to(#4d5256));
   background: -moz-linear-gradient(-90deg, #6a7176, #4d5256);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6a7176, endColorstr=#4d5256);
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6a7176, endColorstr=#4d5256);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6a7176, endColorstr=#4d5256);*/
+  background-color: #222222;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#333333), to(#222222));
+  background-image: -moz-linear-gradient(#333333, #222222);
+  background-image: -ms-linear-gradient(#333333, #222222);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(#333333, #222222);
+  background-image: -o-linear-gradient(#333333, #222222);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+  background-image: linear-gradient(#333333, #222222);
   border-bottom: 1px solid #44484b;
   box-shadow: 0 1px 2px #aaaaaa;
   -moz-box-shadow: 0 1px 2px #aaaaaa;
@@ -20,6 +31,29 @@ a img {
   text-shadow: black 0 1px 0;
   position: relative;
   z-index: 900;
+
+
+/*  background-color: #222222;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#333333), to(#222222));
+  background-image: -moz-linear-gradient(#333333, #222222);
+  background-image: -ms-linear-gradient(#333333, #222222);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(#333333, #222222);
+  background-image: -o-linear-gradient(#333333, #222222);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+  background-image: linear-gradient(#333333, #222222);
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  overflow: visible;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);*/
 }
 
 ul#primary-nav {
@@ -50,6 +84,7 @@ ul#primary-nav li.secondary {
   padding: 0.4em 18px 0.4em 0.4em;
   border-radius: 5px;
   -moz-border-radius: 5px;
+color:#fff !important;
 }
 ul#primary-nav li.secondary ul {
   visibility: hidden;
@@ -458,7 +493,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   border: 0;
 }
 
-#submit{
+#submit, #user_submit{
 	display: inline-block;
   background-color: #e6e6e6;
   background-repeat: no-repeat;
@@ -499,7 +534,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-#submit {
+#submit, #user_submit {
   background-position: 0 -15px;
   color: #fff;
   text-decoration: none;
@@ -696,4 +731,415 @@ form input[readonly]:focus, form textarea[readonly]:focus, form input.disabled {
 }
 .collapse{
 	margin-right:5px;
+}
+
+
+/*Alert messages*/
+.alert {
+  background-color: rgba(0, 0, 0, 0.15);
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.15)));
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='transparent', endColorstr='rgba(0, 0, 0, 0.15)', GradientType=0)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='transparent', endColorstr='rgba(0, 0, 0, 0.15)', GradientType=0);
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-color: #e6e6e6;
+  margin-bottom: 18px;
+  padding: 8px 15px;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.alert p {
+  color: #fff;
+  margin-bottom: 0;
+}
+.alert-message p + p {
+  margin-top: 5px;
+}
+.alert {
+  background-color: #e06359;
+}
+.alert-message.warning {
+  background-color: #ffd75a;
+}
+.alert-message.success {
+  background-color: #74c474;
+}
+.alert-message.info {
+  background-color: #30c0fb;
+}
+.notice {
+  background-color: rgba(0, 0, 0, 0.15);
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.15)));
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='transparent', endColorstr='rgba(0, 0, 0, 0.15)', GradientType=0)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='transparent', endColorstr='rgba(0, 0, 0, 0.15)', GradientType=0);
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-color: #e6e6e6;
+  margin-bottom: 18px;
+  padding: 8px 15px;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.notice {
+  background-color: #74c474;
+}
+
+
+
+
+/* Forms.less
+ * Base styles for various input types, form layouts, and states
+ * ------------------------------------------------------------- */
+form {
+  margin-bottom: 18px;
+}
+form fieldset {
+  margin-bottom: 18px;
+  padding-top: 18px;
+}
+form fieldset legend {
+  display: block;
+  margin-left: 150px;
+  font-size: 20px;
+  line-height: 1;
+  color: #404040;
+}
+form div.clearfix {
+  margin-bottom: 18px;
+}
+form label,
+form input,
+form select,
+form textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+}
+form label {
+  padding-top: 6px;
+  font-size: 13px;
+  line-height: 18px;
+  float: left;
+  width: 130px;
+  text-align: right;
+  color: #404040;
+}
+form div.input {
+  margin-left: 150px;
+}
+form input[type=checkbox], form input[type=radio] {
+  cursor: pointer;
+}
+form input[type=text],
+form input[type=password],
+form input[type=email],
+form textarea,
+form select,
+form .uneditable-input {
+  display: inline-block;
+  width: 210px;
+  margin: 0;
+  padding: 4px;
+  font-size: 13px;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+form select, form input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+form textarea {
+  height: auto;
+}
+form .uneditable-input {
+  background-color: #eee;
+  display: block;
+  border-color: #ccc;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+form :-moz-placeholder {
+  color: #bfbfbf;
+}
+form ::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+form input[type=text],
+form input[type=password],
+form input[type=email],
+form select,
+form textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+form input[type=text]:focus, form input[type=password]:focus, form textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+form div.error {
+  background: #fae5e3;
+  padding: 10px 0;
+  margin: -10px 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+form div.error > label, form div.error span.help-inline, form div.error span.help-block {
+  color: #9d261d;
+}
+form div.error input[type=text], form div.error input[type=password], form div.error textarea {
+  border-color: #c87872;
+  -webkit-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+  -moz-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+  box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+}
+form div.error input[type=text]:focus, form div.error input[type=password]:focus, form div.error textarea:focus {
+  border-color: #b9554d;
+  -webkit-box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+  -moz-box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+  box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+}
+form div.error div.input-prepend span.add-on, form div.error div.input-append span.add-on {
+  background: #f4c8c5;
+  border-color: #c87872;
+  color: #b9554d;
+}
+form .input-mini,
+form input.mini,
+form textarea.mini,
+form select.mini {
+  width: 60px;
+}
+form .input-small,
+form input.small,
+form textarea.small,
+form select.small {
+  width: 90px;
+}
+form .input-medium,
+form input.medium,
+form textarea.medium,
+form select.medium {
+  width: 150px;
+}
+form .input-large,
+form input.large,
+form textarea.large,
+form select.large {
+  width: 210px;
+}
+form .input-xlarge,
+form input.xlarge,
+form textarea.xlarge,
+form select.xlarge {
+  width: 270px;
+}
+form .input-xxlarge,
+form input.xxlarge,
+form textarea.xxlarge,
+form select.xxlarge {
+  width: 530px;
+}
+form textarea.xxlarge {
+  overflow-y: scroll;
+}
+form input[readonly]:focus, form textarea[readonly]:focus, form input.disabled {
+  background: #f5f5f5;
+  border-color: #ddd;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+div.actions {
+  background: #f5f5f5;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  padding: 17px 20px 18px 150px;
+  border-top: 1px solid #ddd;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+div.actions div.secondary-action {
+  float: right;
+}
+div.actions div.secondary-action a {
+  line-height: 30px;
+}
+div.actions div.secondary-action a:hover {
+  text-decoration: underline;
+}
+.help-inline, .help-block {
+  font-size: 12px;
+  line-height: 18px;
+  color: #bfbfbf;
+}
+.help-inline {
+  padding-left: 5px;
+}
+.help-block {
+  display: block;
+  max-width: 600px;
+}
+div.inline-inputs {
+  color: #808080;
+}
+div.inline-inputs span, div.inline-inputs input[type=text] {
+  display: inline-block;
+}
+div.inline-inputs input.mini {
+  width: 60px;
+}
+div.inline-inputs input.small {
+  width: 90px;
+}
+div.inline-inputs span {
+  padding: 0 2px 0 1px;
+}
+div.input-prepend input[type=text], div.input-append input[type=text] {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+div.input-prepend .add-on, div.input-append .add-on {
+  background: #f5f5f5;
+  float: left;
+  display: block;
+  width: auto;
+  min-width: 16px;
+  padding: 4px 4px 4px 5px;
+  color: #bfbfbf;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  border: 1px solid #ccc;
+  border-right-width: 0;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+div.input-prepend .active, div.input-append .active {
+  background: #a9dba9;
+  border-color: #46a546;
+}
+div.input-append input[type=text] {
+  float: left;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+div.input-append .add-on {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  border-right-width: 1px;
+  border-left-width: 0;
+}
+ul.inputs-list {
+  margin: 0 0 5px;
+  width: 100%;
+}
+ul.inputs-list li {
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+ul.inputs-list li label {
+  display: block;
+  float: none;
+  width: auto;
+  padding: 0;
+  line-height: 18px;
+  text-align: left;
+  white-space: normal;
+}
+ul.inputs-list li label strong {
+  color: #808080;
+}
+ul.inputs-list li label small {
+  font-size: 12px;
+  font-weight: normal;
+}
+ul.inputs-list li ul.inputs-list {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  padding-top: 0;
+}
+ul.inputs-list li:first-child {
+  padding-top: 5px;
+}
+ul.inputs-list input[type=radio], ul.inputs-list input[type=checkbox] {
+  margin-bottom: 0;
+}
+form.form-stacked {
+  padding-left: 20px;
+}
+form.form-stacked fieldset {
+  padding-top: 9px;
+}
+form.form-stacked legend {
+  margin-left: 0;
+}
+form.form-stacked label {
+  display: block;
+  float: none;
+  width: auto;
+  font-weight: bold;
+  text-align: left;
+  line-height: 20px;
+  padding-top: 0;
+}
+form.form-stacked div.clearfix {
+  margin-bottom: 9px;
+}
+form.form-stacked div.clearfix div.input {
+  margin-left: 0;
+}
+form.form-stacked ul.inputs-list {
+  margin-bottom: 0;
+}
+form.form-stacked ul.inputs-list li {
+  padding-top: 0;
+}
+form.form-stacked ul.inputs-list li label {
+  font-weight: normal;
+  padding-top: 0;
+}
+form.form-stacked div.actions {
+  margin-left: -20px;
+  padding-left: 20px;
 }
