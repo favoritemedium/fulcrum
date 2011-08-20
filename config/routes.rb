@@ -1,5 +1,7 @@
 Fulcrum::Application.routes.draw do
 
+  resources :comments
+
   get "story/new"
 
   resources :projects do

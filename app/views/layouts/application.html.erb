@@ -35,23 +35,6 @@
     <% end %>
   </ul>
 </div>
-<!-- <div class="topbar">
-      <div class="fixed">
-<ul id="primary-nav"><li class="root"><%= link_to "Fulcrum", root_path %></li></ul>
-        <ul class="nav secondary-nav">
-          <li class="secondary">
-            <a class="menu" href="#">Projects</a>
-            <ul class="menu-dropdown" >
-		          <%- current_user.projects.each do |project| -%>
-		            <li><%= link_to project, project %></li>
-		          <%- end -%>
-            </ul>
-          </li>
-					<li><%= link_to current_user.email, edit_user_registration_path %></li>
-		      <li><%= link_to 'Log out', destroy_user_session_path %></li>
-        </ul>
-      </div>
-    </div> -->
 
 <div id="title_bar">
   <%= yield :title_bar %>

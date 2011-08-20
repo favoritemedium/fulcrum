@@ -10,7 +10,7 @@
   <% end %>
 </ul>
 <h2>Add a new member</h2>
-<%= form_for project_users_path(@project, @user) do |f| %>
+<%= form_for project_users_path(@project, @user), :html => {:class => "form-stacked"} do |f| %>
   <% fields_for :user do |u| %>
     <p>
     <%= u.label :email %><br />

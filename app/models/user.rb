@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   attr_accessor :was_created
 
   has_and_belongs_to_many :projects, :uniq => true
+  has_many :comments
 
   before_validation :set_random_password_if_blank
 
