@@ -1,0 +1,2 @@
+document.getElementById('new_comment').reset();
+$('#storyComment<%= @comment.story_id %>').append('<tr><td><%= @comment.comment %></td><td><%= @comment.user.name %></td></tr>');

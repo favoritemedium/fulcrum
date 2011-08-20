@@ -277,6 +277,7 @@ var StoryView = FormView.extend({
 
 	  div = this.make('table');
 		$(div).attr('class', 'zebra-striped');
+		$(div).attr('id', 'storyComment'+this.id);
 		$(div).append('<thead><th>Comment</th><th>Made By</th></thead>');
 		$.getJSON('/comments/'+this.id+'.json', function(data) {
 			  var items = [];
