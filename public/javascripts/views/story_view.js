@@ -271,9 +271,8 @@ var StoryView = FormView.extend({
 	  $(this.el).append(div);
 	
 	  div = this.make('div');
-      $(div).append(this.label("comment", "Comment"));
-      $(div).append('<br/>');
-      $(div).append(this.textArea("comment"));
+	  currentUser = $('#hiddenUserId').text();
+	  $(div).append('<form method="post" id="new_comment" data-remote="true" class="new_comment" action="/comments" accept-charset="UTF-8"><label for="comment_comment">Comment</label><br><textarea rows="8" name="comment[comment]" id="comment_comment" cols="40"></textarea><br><input type="hidden" value="'+currentUser+'" name="comment[user_id]" id="comment_user_id"><input type="hidden" value="'+this.id+'" name="comment[story_id]" id="comment_story_id"><br/><input type="submit" value="Add comment" name="commit" id="comment_submit" class="btn primary"></form>');
       $(this.el).append(div);
 
 
@@ -302,4 +301,11 @@ var StoryView = FormView.extend({
   enableForm: function() {
 	$(this.el).find('img.collapse').attr('src', '/images/collapse.png');
   }
+
+
+});
+$('#commentSave').click(function() {
+	alert('test');
+  var commentText = $('textarea#comment').val();
+alert(commentText);
 });

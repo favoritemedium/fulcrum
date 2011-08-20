@@ -160,11 +160,22 @@ div.storycolumn {
 
 /* Story columns headers */
 table.stories th {
-  background: #6a7176;
+/*  background: #6a7176;
   background: -webkit-gradient(linear, left top, left bottom, from(#6a7176), to(#4d5256));
   background: -moz-linear-gradient(-90deg, #6a7176, #4d5256);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6a7176, endColorstr=#4d5256);
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6a7176, endColorstr=#4d5256);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6a7176, endColorstr=#4d5256);*/
+  background-color: #222222;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#333333), to(#222222));
+  background-image: -moz-linear-gradient(#333333, #222222);
+  background-image: -ms-linear-gradient(#333333, #222222);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(#333333, #222222);
+  background-image: -o-linear-gradient(#333333, #222222);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+  background-image: linear-gradient(#333333, #222222);
   color: #eee;
   padding: 0.2em;
   font-weight: bold;
@@ -356,6 +367,7 @@ margin-top:0px !important;
 /* Iteration markers */
 .iteration {
   background: #000 url('/images/iteration.png') no-repeat 2px center;
+
   color: #ddd;
   padding: 0.2em 0.2em 0.2em 20px;
   border-radius: 5px 5px 0 0;

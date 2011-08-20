@@ -22,10 +22,10 @@
     <td><%= project.iteration_start_day %></td>
     <td><%= project.iteration_length %></td>
     <td><%= project.point_scale %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Members', project_users_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', project, :class => "btn" %></td>
+    <td><%= link_to 'Edit', edit_project_path(project), :class => "btn" %></td>
+    <td><%= link_to 'Members', project_users_path(project), :class => "btn" %></td>
+    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :class => "btn" %></td>
   </tr>
 <% end %>
 </table>
