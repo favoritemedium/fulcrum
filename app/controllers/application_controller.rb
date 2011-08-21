@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
+  include ::SslRequirement
+
+  ssl_allowed :all
   protect_from_forgery
 
-  before_filter :authenticate_user!, :redirect_to_https
+  before_filter :authenticate_user!
 
   # Handle unauthorized access with a good old fashioned 'forbidden'
   rescue_from CanCan::AccessDenied do |exception|
@@ -21,8 +24,5 @@ class ApplicationController < ActionController::Base
         render :nothing => true, :status => '404'
       end
     end
-  end
-  def redirect_to_https
-      redirect_to :protocol => "https://" unless (request.ssl? || local_request?)
   end
 end

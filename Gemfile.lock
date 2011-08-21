@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.9)
     activesupport (3.0.9)
     arel (2.0.10)
+    bartt-ssl_requirement (1.2.7)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cancan (1.6.1)
@@ -110,6 +111,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bartt-ssl_requirement
   cancan (= 1.6.1)
   devise (= 1.2.1)
   factory_girl_rails
