@@ -180,6 +180,10 @@ var Story = Backbone.Model.extend({
     return typeof this.get('description') == "string";
   },
 
+  hasLabels: function() {
+    return typeof this.get('labels') == "string";
+  },
+
   iterationNumber: function() {
     if (this.get('state') === "accepted") {
       return this.collection.project.getIterationNumberForDate(new Date(this.get("accepted_at")));

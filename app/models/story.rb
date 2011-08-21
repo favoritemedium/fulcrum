@@ -3,7 +3,7 @@ class Story < ActiveRecord::Base
   JSON_ATTRIBUTES = [
     "title", "accepted_at", "created_at", "updated_at", "description",
     "project_id", "story_type", "owned_by_id", "requested_by_id", "estimate",
-    "state", "position", "id", "events", "estimable", "estimated"
+    "state", "position", "id", "events", "estimable", "estimated", "labels"
   ]
   JSON_METHODS = [
     "events", "estimable", "estimated", "errors"

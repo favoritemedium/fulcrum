@@ -7,10 +7,16 @@ var FormView = Backbone.View.extend({
   },
 
   textField: function(name) {
-    var el = this.make('input', {type: "text", name: name, value: this.model.get(name)});
+    var el = this.make('input', {type: "text", name: name, value: this.model.get(name), id: name+this.model.id});
     this.bindElementToAttribute(el, name);
     return el;
   }, 
+
+  labelField: function(name) {
+    var el = this.make('input', {type: "text", name: name, value: this.model.get('labels')});
+    this.bindElementToAttribute(el, name);
+    return el;
+  },
 
   hiddenField: function(name) {
     var el = this.make('input', {type: "hidden", name: name, value: this.model.get(name)});

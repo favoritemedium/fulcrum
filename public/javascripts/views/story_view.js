@@ -271,35 +271,28 @@ var StoryView = FormView.extend({
 	  $(this.el).append(div);
 	
 	  div = this.make('div');
+	  $(div).append(this.label("labels", "Labels"));
+	  $(div).append('<br/>');
+	  $(div).append(this.textField("labels"));
+	  $(this.el).append(div);
+	$('#labels'+this.id).tagsInput({'onAddTag':update_label_hidden_input, 'height':'60px', 'onRemoveTag':update_label_hidden_input});
+	
+	  div = this.make('div');
 	  currentUser = $('#hiddenUserId').text();
 	  $(div).append('<form method="post" id="new_comment" data-remote="true" class="new_comment" action="/comments" accept-charset="UTF-8"><label for="comment_comment">Comment</label><br><textarea rows="2" name="comment[comment]" id="comment_comment" cols="40"></textarea><br><input type="hidden" value="'+currentUser+'" name="comment[user_id]" id="comment_user_id"><input type="hidden" value="'+this.id+'" name="comment[story_id]" id="comment_story_id"><br/><input type="submit" value="Add comment" name="commit" id="comment_submit" class="btn primary"></form>');
       $(this.el).append(div);
-
-		// 	  div = this.make('table');
-		// $(div).attr('class', 'zebra-striped');
-		// $(div).attr('id', 'storyComment'+this.id);
-		// $(div).append('<thead><th>Comment</th><th>Made By</th></thead>');
-		// $.getJSON('/comments/'+this.id+'.json', function(data) {
-		// 	  var items = [];
-		// 	$.each(data, function(k,v){
-		// 			$(div).append('<tr><td>'+v.comment.comment+'</td><td>'+v.comment.user_name+'</td></tr>');
-		// 	});
-		// });
-		// 	  $(this.el).append(div);
 	
 	  div = this.make('div');
-		//$(div).attr('class', 'zebra-striped');
 		$(div).attr('id', 'storyComment'+this.id);
 		$(div).append('Comments<br />');
 		$.getJSON('/comments/'+this.id+'.json', function(data) {
 			  var items = [];
 			$.each(data, function(k,v){
 					$(div).append('<p><strong>'+v.comment.user_name+'</strong> <time class="timeago" datetime="'+v.comment.created_at+'">'+v.comment.created_at+'</time><br />'+v.comment.comment+'</p>');
-					//$(div).append('<tr><td>'+v.comment.comment+'</td><td>'+v.comment.user_name+'</td></tr>');
 			});
 		});
 	  $(this.el).append(div);
-
+	
 
 	} else {
 	  $(this.el).html($('#story_tmpl').tmpl(this.model.toJSON(), {story: this.model, view: this}));
@@ -329,3 +322,9 @@ var StoryView = FormView.extend({
 
 
 });
+function update_label_hidden_input(value){
+	setTimeout("delay_change_label()",200);
+}
+function delay_change_label(){
+	$('input[name="labels"]').trigger('change');
+}
