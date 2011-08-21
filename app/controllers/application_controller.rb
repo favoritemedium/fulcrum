@@ -24,6 +24,11 @@ class ApplicationController < ActionController::Base
     end
   end
   def redirect_to_https
-      redirect_to :protocol => "https://" unless (request.ssl? || local_request?)
+      #redirect_to :protocol => "https://" unless (request.ssl? || local_request?)
+      @cont = controller_name
+
+      @act = action_name
+
+      redirect_to "https://biemedia-fulcrum.heroku.com/#{@cont}/#{@act}/#{params[:id]}" unless (@request.ssl? or local_request?)
   end
 end
