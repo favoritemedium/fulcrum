@@ -1168,3 +1168,23 @@ img.right {
     float: right;
     margin-right: 1.5em;
 }
+noscript{
+	background-color:rgba(0,0,0,0.9);
+    clear: both;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+	color:red;
+	font-size:30px;
+	text-align:center;
+	padding-top:100px;
+	left:0;
+	top:0;
+	line-height: 2em;
+	text-shadow: none;
+}
+noscript a{
+	color:red !important;
+}
