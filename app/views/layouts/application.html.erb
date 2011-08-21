@@ -76,6 +76,46 @@
 // function update_label_hidden_input(value){
 // 	alert(value);
 // }
+
+$('#hideDone').click(function() {
+	$('.doneColumn').toggle('slow', function() {
+		if ($('.doneColumn').is(":visible") == true){
+			$('#hideDone').attr('style', "color: #0069D6 !important;");
+		}else{
+			$('#hideDone').attr('style', "color:#aaa !important;");
+		}
+	});
+});
+$('#hideProgress').click(function() {
+	$('.progressColumn').toggle('slow', function() {
+		if ($('.progressColumn').is(":visible") == true){
+			$('#hideProgress').attr('style', "color: #0069D6 !important;");
+		}else{
+			$('#hideProgress').attr('style', "color:#aaa !important;");
+		}
+	});
+});
+$('#hideBacklog').click(function() {
+	$('.backlogColumn').toggle('slow', function() {
+		if ($('.backlogColumn').is(":visible") == true){
+			$('#hideBacklog').attr('style', "color: #0069D6 !important;");
+		}else{
+			$('#hideBacklog').attr('style', "color:#aaa !important;");
+		}
+	});
+});
+$('#hideChilly').click(function() {
+	$('.chillyColumn').toggle('slow', function() {
+		if ($('.chillyColumn').is(":visible") == true){
+			$('#hideChilly').attr('style', "color: #0069D6 !important;");
+		}else{
+			$('#hideChilly').attr('style', "color:#aaa !important;");
+		}
+	});
+});
+// function hideColumn(columnIndex) {
+// 	$('.stories td:nth-child('+(columnIndex+1)+'), stories th:nth-child('+(columnIndex+1)+')').hide();
+// }
 </script>
 </body>
 </html>
