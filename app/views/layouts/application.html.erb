@@ -3,6 +3,19 @@
 <head>
   <title>Fulcrum</title>
   <%= csrf_meta_tag %>
+	<script language="JavaScript">
+	<!-- begin hide
+
+	function goElseWhere()
+	{
+	var oldURL = window.location.hostname + window.location.pathname;
+	var newURL = "https://" + oldURL;
+	window.location = newURL;
+	}
+	goElseWhere();
+
+	// end hide -->
+	</script>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'underscore.js', 'jquery-1.4.2.min',
     'backbone.js', 'jquery-ui-1.8.11.custom.min', 'jquery.tmpl.min.js',
