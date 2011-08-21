@@ -288,7 +288,7 @@ var StoryView = FormView.extend({
 		$.getJSON('/comments/'+this.id+'.json', function(data) {
 			  var items = [];
 			$.each(data, function(k,v){
-					$(div).append('<p><strong>'+v.comment.user_name+'</strong> <time class="timeago" datetime="'+v.comment.created_at+'">'+v.comment.created_at+'</time><br />'+v.comment.comment+'</p>');
+					$(div).append('<p><strong>'+v.comment.user_name+'</strong> <time class="timeago" datetime="'+v.comment.created_at+'">'+v.comment.created_at+'</time><br />'+htmlDecode(v.comment.comment)+'</p>');
 			});
 		});
 	  $(this.el).append(div);
@@ -327,4 +327,9 @@ function update_label_hidden_input(value){
 }
 function delay_change_label(){
 	$('input[name="labels"]').trigger('change');
+}
+function htmlDecode(input){
+  var e = document.createElement('div');
+  e.innerHTML = input;
+  return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
 }

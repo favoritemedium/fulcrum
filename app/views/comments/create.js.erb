@@ -1,3 +1,2 @@
 document.getElementById('new_comment').reset();
-$('#storyComment<%= @comment.story_id %>').append('<p><strong><%= @comment.user.name %></strong> <time class="timeago" datetime="<%= @comment.created_at %>"><%= @comment.created_at.strftime("%d %b %Y, %I:%M%p") %></time><br /><%= @comment.comment %></p>');
-
+$('#storyComment<%= @comment.story_id %>').append('<p><strong><%= @comment.user.name %></strong> <time class="timeago" datetime="<%= @comment.created_at %>"><%= @comment.created_at.strftime("%d %b %Y, %I:%M%p") %></time><br /><%= raw(@comment.comment) %></p>');
