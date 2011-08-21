@@ -2,18 +2,113 @@
   <h1>Sign in</h1>
 <% end %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-stacked"}) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.email_field :email %></p>
+<span style="float:left;width:450px">
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-stacked"}) do |f| %>
+	  <p><%= f.label :email %><br />
+	  <%= f.email_field :email %></p>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+	  <p><%= f.label :password %><br />
+	  <%= f.password_field :password %></p>
 
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
+	  <% if devise_mapping.rememberable? -%>
+	    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+	  <% end -%>
 
-  <p><%= f.submit "Sign in" %></p>
-<% end %>
+	  <p><%= f.submit "Sign in" %></p>
+	<% end %>
 
-<%= render :partial => "devise/shared/links" %>
+
+	<%= render :partial => "devise/shared/links" %>
+</span>
+
+<div id="welcomeText">
+<h1>What is Fulcrum?</h1>
+
+<p>Fulcrum is an agile project management tool.  It provides a real time overview
+of your project plan (<em>product backlog</em>), instantly adjusting the project plan
+based upon your team&#8217;s prior performance.</p>
+
+<p>Fulcrum aims to create an experience as instantaneous and interactive as the
+traditional tool for agile project management, the whiteboard.</p>
+
+<p>For help visit the Pivotal Tracker <a href="http://www.pivotaltracker.com/help/gettingstarted" target="blank">getting started guide</a>.</p>
+
+<!-- <h2>Story based task management</h2>
+
+<p><img class='left ' src='/images/login/stories.png' width='' height='' alt='' title=''>
+In Fulcrum, tasks are broken up into &#8216;stories&#8217;.  The aim is to describe the
+required behaviour of the system in a way that your product owner will
+understand.  They typically describe a single interaction a user may have with
+the system.  An example story might be &#8216;a user can add a product to their
+cart&#8217; or &#8216;a user is notified when another user comments on one of their topics&#8217;.</p>
+
+<p>Instead of estimating the time required to complete a story, each feature is
+given a relative difficulty score, given in &#8216;story points&#8217;.  It&#8217;s up to the
+team to decide what each of these points represents, the most important
+consideration is to ensure the <em>relative</em> difficulty of each story.  This is
+important for the calculation of velocity, discussed below.</p>
+
+<h2>Velocity and iterations</h2>
+
+<p><img class='right ' src='/images/login/backlog.png' width='' height='' alt='' title=''>
+Completed work is &#8216;time boxed&#8217; into fixed length periods, called <em>iterations</em>.
+Each iteration is 1 week long by default, but can be modified.</p>
+
+<p>Velocity is the measure of your team&#8217;s speed of progress.  It&#8217;s calculated
+from the average completed story points from the most recently completed
+iterations.</p>
+
+<p>The project&#8217;s velocity is used to automatically project forward progress
+for the upcoming iterations.  This provides immediate visibility of when
+any feature is likely to be delivered to a surprisingly accurate level from
+very early on in the project&#8217;s lifetime.</p>
+
+<h2>Prioritisation</h2>
+
+<p><img class='left ' src='/images/login/drag_and_drop.png' width='' height='' alt='' title=''></p>
+
+<p>Fulcrum makes it easy, and even encourages, re-prioritisation of stories.
+Tasks are simply placed in the order of priority decided by the product owner,
+and the development team tackle them in this order.</p>
+
+<p>Because the product owner can see the projected time line of the project at
+all times, they can change feature priority based on this knowledge.  For
+example, it may be required to move a feature forward in the backlog to meet
+a deadline.</p>
+
+<p>Any changes made to stories are propagated across all active users of a project
+in real time, so you can organise planning sessions with remote stakeholders
+and be sure that everyone is on the same page.</p>
+
+<h2>Story types</h2>
+
+<p>Stories are split into four types:</p>
+
+<p><img class='left ' src='/images/login/feature.png' width='' height='' alt='' title=''>
+Features are stories which bring business value to the project.  They are the
+bread and butter of the product backlog.  Features must be accepted by the
+product owner before they are considered <em>done</em> and contribute to the project
+velocity.</p>
+
+<p><img class='left ' src='/images/login/bug.png' width='' height='' alt='' title=''>
+Bugs are pieces of functionality that are not working as intended.  Because
+fixing a bug doesn&#8217;t carry any business value, bugs cannot be allocated
+points.  They are an overhead of development, and don&#8217;t contribute to the
+project velocity.</p>
+
+<p><img class='left ' src='/images/login/chore.png' width='' height='' alt='' title=''>
+Chores are technical tasks associated with the project, for example security
+upgrades, deployment set-ups etc.  Like bugs, they don&#8217;t carry any business
+value for the project, and so cannot be allocated points.  Unlike bugs they
+don&#8217;t need to be accepted by the product owner.</p>
+
+<p><img class='left ' src='/images/login/release.png' width='' height='' alt='' title=''>
+Releases represent key points in the project development.  They can have an
+optional deadline date attached to them, and if they do Fulcrum will show
+whether the deadline is likely to be met or not.</p> -->
+
+
+
+
+
+</div>

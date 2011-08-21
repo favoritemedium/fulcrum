@@ -1155,3 +1155,16 @@ form.form-stacked div.actions {
   margin-left: -20px;
   padding-left: 20px;
 }
+
+#welcomeText{
+	float:left;
+	width:450px;
+}
+img.left {
+    float: left;
+    margin-right: 1.5em;
+}
+img.right {
+    float: right;
+    margin-right: 1.5em;
+}
