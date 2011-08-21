@@ -4,17 +4,14 @@
   <title>Fulcrum</title>
   <%= csrf_meta_tag %>
 	<script language="JavaScript">
-	<!-- begin hide
-
-	function goElseWhere()
-	{
-	var oldURL = window.location.hostname + window.location.pathname;
-	var newURL = "https://" + oldURL;
-	window.location = newURL;
+	//redirect http to https - even though i dont think this matters anymore
+	var a = document.URL.split("//"); // split at protocol
+	//alert(a[0]);
+	if (a[0]=='http:'){
+		window.location = 'https://'+a[1];
+	}else{
+		//do nothing
 	}
-	goElseWhere();
-
-	// end hide -->
 	</script>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'underscore.js', 'jquery-1.4.2.min',
