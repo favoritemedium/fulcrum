@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ::SslRequirement
 
-  ssl_allowed :all
+  ssl_required :all
   protect_from_forgery
 
   before_filter :authenticate_user!
