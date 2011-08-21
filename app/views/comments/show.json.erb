@@ -3,7 +3,7 @@
 		{
 			"comment": {
 				"comment": "<%= comment.comment %>",
-				"created_at": "<%= comment.created_at %>",
+				"created_at": "<%= comment.created_at.strftime("%d %b %Y, %I:%M%p") %>",
 				"story_id": "<%= comment.story_id %>",
 				"user_id": "<%= comment.user_id %>",
 				"user_name": "<%= comment.user.name %>",

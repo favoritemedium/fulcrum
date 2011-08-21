@@ -21,4 +21,5 @@ $(function() {
 
   $('#backlog').sortable('option', 'connectWith', '#chilly_bin');
   $('#chilly_bin').sortable('option', 'connectWith', '#backlog');
+
 });
