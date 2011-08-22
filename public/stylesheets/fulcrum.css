@@ -382,26 +382,34 @@ margin-top:0px !important;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  border: 1px solid #333;
+  border: 1px solid #aaa;
   cursor: pointer;
   font-size: small;
 margin-top:-10px;
 }
 
 .state-actions input.start {
-  background-color: #d3d7cf;
+  background-color: #ddd;
 }
 .state-actions input.finish {
-  background-color: #729fcf;
+  /*background-color: #729fcf;*/
+  background: none repeat scroll 0 0 #C7EEFE;
+   border: 1px solid #ADE6FE;
 }
 .state-actions input.deliver {
-  background-color: #edd400;
+/*  background-color: #edd400;*/
+background: none repeat scroll 0 0 #FFF0C0;
+ border: 1px solid #FFE38D;
 }
 .state-actions input.accept {
-  background-color: #73d216;
+ /* background-color: #73d216;*/
+ background: none repeat scroll 0 0 #DFF1DF;
+  border: 1px solid #BBE2BB;
 }
 .state-actions input.reject {
-  background-color: #ef2929;
+ /* background-color: #ef2929;*/
+	background: none repeat scroll 0 0 #F8DCDA;
+ border: 1px solid #F4C8C5;
 }
 .state-actions input.restart {
   background: #ef2929 url('/images/redo.png') no-repeat;
