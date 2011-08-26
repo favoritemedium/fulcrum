@@ -79,6 +79,8 @@
 // 	alert(value);
 // }
 
+var current_user_id = <%= current_user.id if current_user %>
+
 $('#hideDone').click(function() {
 	$('.doneColumn').toggle('slow', function() {
 		if ($('.doneColumn').is(":visible") == true){
@@ -112,6 +114,15 @@ $('#hideChilly').click(function() {
 			$('#hideChilly').attr('style', "color: #0069D6 !important;");
 		}else{
 			$('#hideChilly').attr('style', "color:#aaa !important;");
+		}
+	});
+});
+$('#hideMywork').click(function() {
+	$('.myworkColumn').toggle('slow', function() {
+		if ($('.myworkColumn').is(":visible") == true){
+			$('#hideMywork').attr('style', "color: #0069D6 !important;");
+		}else{
+			$('#hideMywork').attr('style', "color:#aaa !important;");
 		}
 	});
 });

@@ -4,6 +4,7 @@ var StoryCollection = Backbone.Collection.extend({
   initialize: function() {
     this.bind('change:position', this.sort);
     this.bind('change:state', this.sort);
+    this.bind('change:owned_by_id', this.sort);
   },
 
   comparator: function(story) {
@@ -21,6 +22,13 @@ var StoryCollection = Backbone.Collection.extend({
   // Returns all the stories in the named column, either #done, #in_progress,
   // #backlog or #chilly_bin
   column: function(column) {
+    if(column == "#my_work"){
+    	return this.select(function(story) {
+		    console.log(story.get('owned_by_id'));
+            return story.get('owned_by_id') == current_user_id
+	    });
+    }
+      console.log(column);
     return this.select(function(story) {
       return story.column() == column;
     });

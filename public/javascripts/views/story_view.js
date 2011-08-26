@@ -26,7 +26,15 @@ var StoryView = FormView.extend({
 	this.model.view = this;
 
 	if (this.model.id) {
-	  this.id = this.el.id = this.model.id;
+      var id;
+
+      if(this.options.custom_id != null){
+       id = this.options.custom_id + this.model.id;
+      }else{
+        id = this.model.id;
+      }
+
+	  this.id = this.el.id = id;
 	}
 
 	// Set up CSS classes for the view
@@ -156,7 +164,9 @@ var StoryView = FormView.extend({
 	$(this.el).appendTo(this.model.get('column'));
   },
 
-  startEdit: function() {
+  startEdit: function(ev) {
+    this.clickedon = this.el.id;
+    console.log($(ev.currentTarget).text());
 	this.model.set({editing: true});
   },
 
@@ -213,8 +223,16 @@ var StoryView = FormView.extend({
 	}
   },
 
-  render: function() {
-	if(this.model.get('editing') === true) {
+  render: function(e) {
+    if(this.model.get('editing') === true && this.id != this.clickedon) {
+        this.clickedon = null;
+        return this;
+    }
+    else {
+        this.clickedon = null;
+    }
+
+      if(this.model.get('editing') === true) {
 	  $(this.el).empty();
 	  div = this.make('div');
 	  if (!this.model.isNew()) {

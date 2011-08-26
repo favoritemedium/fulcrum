@@ -15,11 +15,17 @@ var AppView = Backbone.View.extend({
     $(story.column()).append(view.render().el);
   },
 
+  addOneMyWork: function(story) {
+    var view = new StoryView({model: story, custom_id: "mywork"});
+    $("#my_work").append(view.render().el);
+  },
+
   addAll: function() {
     $('#done').html("");
     $('#in_progress').html("");
     $('#backlog').html("");
     $('#chilly_bin').html("");
+    $('#my_work').html("");
 
     // FIXME - Refactor
     var that = this;
@@ -64,6 +70,7 @@ var AppView = Backbone.View.extend({
     _.each(window.Project.stories.column('#in_progress'), this.addOne);
     _.each(window.Project.stories.column('#backlog'), this.addOne);
     _.each(window.Project.stories.column('#chilly_bin'), this.addOne);
+    _.each(window.Project.stories.column('#my_work'), this.addOneMyWork);
   },
 
   // Creates a set of empty iterations in column el, with iteration numbers
